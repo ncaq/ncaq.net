@@ -49,7 +49,7 @@
           treefmt.config = {
             projectRootFile = "flake.nix";
             programs = {
-              actionlint.enable = false;
+              actionlint.enable = true;
               deadnix.enable = true;
               nixfmt.enable = true;
               prettier.enable = true;
