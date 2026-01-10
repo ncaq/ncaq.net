@@ -1,0 +1,4 @@
+# Nix
+.direnv/
+.env.local
+result*
