@@ -1,2 +1,3 @@
 # ncaq.net
-https://ncaq.net/
+
+<https://ncaq.net/>
