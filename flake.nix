@@ -33,7 +33,7 @@
             cp -r ${./public}/* $out/
 
             export GNUPGHOME=$(mktemp -d)
-            gpg --import ${inputs.dotfiles}/home/ncaq-public-key.asc
+            gpg --import ${inputs.dotfiles}/key/ncaq-public-key.asc
 
             # WKD用ディレクトリ構造を生成
             mkdir -p $out/.well-known/openpgpkey
