@@ -30,7 +30,7 @@
         {
           packages.default = pkgs.runCommand "ncaq-net" { nativeBuildInputs = [ pkgs.gnupg ]; } ''
             mkdir -p $out
-            cp -r ${./public}/* $out/
+            cp -r --no-preserve=mode ${./public}/. $out/
 
             export GNUPGHOME=$(mktemp -d)
             gpg --import ${inputs.dotfiles}/key/ncaq-public-key.asc
