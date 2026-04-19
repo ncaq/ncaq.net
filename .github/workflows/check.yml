@@ -1,24 +1,24 @@
-# コミットごとにチェックを行う。
 name: check
 
 on:
   push:
-    branches: master
+    branches: [master, main]
   pull_request:
-  workflow_dispatch:
+  merge_group:
+
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-  contents: read # リポジトリコンテンツの読み取り
-  id-token: write # niks3のOIDC認証に必要
-
 jobs:
   check:
     name: check
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read # リポジトリコンテンツの読み取り
+      id-token: write # niks3 OIDC認証
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:

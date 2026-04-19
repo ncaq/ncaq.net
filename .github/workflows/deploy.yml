@@ -1,17 +1,13 @@
 name: Deploy to Cloudflare Pages
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - master
+    branches: [master, main]
+
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-
-permissions:
-  contents: read # リポジトリコンテンツの読み取り
-  id-token: write # niks3のOIDC認証に必要
 
 jobs:
   deploy:
@@ -19,7 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: read # リポジトリコンテンツの読み取り
-  id-token: write # niks3のOIDC認証に必要
+      id-token: write # niks3のOIDC認証に必要
       deployments: write # Cloudflareデプロイメントステータスの更新
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
