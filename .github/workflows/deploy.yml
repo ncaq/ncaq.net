@@ -25,7 +25,7 @@ jobs:
       - uses: ncaq/nix-composite-action@2b72ad0c744a271852bfb65830a6ab6818e1aacd # v3.0.4
       - run: nix build
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
+        uses: cloudflare/wrangler-action@4e88846969242f7752bcfdaf5511bfbb3985ca47 # v4.1.1
         with:
           apiToken: "${{ secrets.CLOUDFLARE_API_TOKEN }}"
           accountId: "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}"
